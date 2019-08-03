@@ -2,9 +2,9 @@
 P2P chat application, where sensible messages are encrypted.
 
 We implemented three protocols:
-•	Ephemeral RSA: to exchange temporary keys between server and clients
-•	Needham–Schroeder Protocol (Denning-Sacco variant): to exchange keys between clients
-•	Hash Functions: to store passwords
+-	Ephemeral RSA: to exchange temporary keys between server and clients
+-	Needham–Schroeder Protocol (Denning-Sacco variant): to exchange keys between clients
+-	Hash Functions: to store passwords
 
 # Installation
 To build project:
