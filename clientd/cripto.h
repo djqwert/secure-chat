@@ -1,0 +1,16 @@
+void print_bytes(const unsigned char*, int);
+EVP_PKEY* retrieve_prvkey(const char* );
+EVP_PKEY* retrieve_pubkey(const char* file_name);
+int decrypt(EVP_CIPHER_CTX *ctx, const unsigned char*, int, unsigned char*, int* );
+int encrypt(EVP_CIPHER_CTX *ctx, const unsigned char* clear_buf, const int clear_size, unsigned char* cphr_buf, int* cphr_size);
+int send_buffer(int sk, unsigned char* buffer, int buf_len);
+int recv_buffer(int sk, unsigned char** buffer, int* buf_len);
+int verify(EVP_PKEY *pubkey, const EVP_MD* md, const unsigned char* msg_buf, const int msg_size, const unsigned char* sgnt_buf, int sgnt_size);
+int sign(EVP_PKEY *prvkey, const EVP_MD* md, const unsigned char* msg_buf, const int msg_size, unsigned char* sgnt_buf, int* sgnt_size);
+int retrieve_key(const char* file_name, unsigned char* key, int key_size);
+int retrieve_hash_key(const char* file_name, unsigned char* key, int key_size);
+unsigned char* myhash(unsigned char* clear_buf, int size, unsigned char* key_hmac, int key_hmac_size);
+int buf_dec(unsigned char* cphr_buf, int size, unsigned char* key, int key_size, unsigned char* clear_buf);
+int buf_enc(unsigned char* clear_buf, int size, unsigned char* key, int key_size, unsigned char* cphr_buf);
+int nonce_compare(unsigned char *a, unsigned char *b, int size);
+int digest_message(const unsigned char *message, size_t message_len, unsigned char **digest, unsigned int *digest_len);
